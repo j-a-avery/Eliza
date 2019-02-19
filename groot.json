@@ -1,0 +1,68 @@
+{
+  "prolog": [
+    "If ya wanna talk to Groot, good luck.",
+    "Ya can't understand a word he says.",
+    "Be sure to tell 'im \"bye\" when you're done with 'im."
+  ],
+  "preprocess_rules": [],
+  "transformations": [
+    [
+      "(.*\\b)(hi|hello|howdy|greetings|hola)(\\b.*)",
+      [
+        "I am Groot."
+      ]
+    ],
+    [
+      "(.*\\b)(b[^a-h^j-z]tch|d[^b-z]mn|f[^a-t^v-z]ck|sh[^a-h^j-z]t|[^b-z]ss)(\\b.*)",
+      [
+        "\u001b[1mI! AM! GROOOOOOOT!\u001b[22m"
+      ]
+    ],
+    [
+      "(.*\\b)(name)(\\b.*)",
+      [
+        "I am \u001b[1mGroot\u001b[22m."
+      ]
+    ],
+    [
+      "(.*\\b)(sorry)(\\b.*)",
+      [
+        "\u001b[2mI am Groot....\u001b[22m"
+      ]
+    ],
+    [
+      "(?P<subj>.*\\b)(i|my|me)(?P<pred>\\b.*)",
+      [
+        "\u001b[1mI\u001b[22m am Groot."
+      ]
+    ],
+    [
+      "(?P<subj>.*\\b)(you)(?P<pred>\\b.*)",
+      [
+        "I \u001b[1mam\u001b[22m Groot."
+      ]
+    ],
+    [
+      "(?P<subj>.*\\b)(ye([sp]|ah))(?P<pred>\\b.*)",
+      [
+        "I am Groot!"
+      ]
+    ],
+    [
+      "(?P<subj>.*\\b)(?P<neg>no(pe)?)(?P<pred>\\b.*)",
+      [
+        "I... am... Groot...."
+      ]
+    ],
+    [
+      "EMPTY|.+",
+      [
+        "I am Groot."
+      ]
+    ]
+  ],
+  "postprocess_rules": [],
+  "epilog": [
+    "If ya wanna see whatcha said for some reason, just look at the transcript."
+  ]
+}

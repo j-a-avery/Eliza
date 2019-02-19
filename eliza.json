@@ -1,0 +1,401 @@
+{
+  "prolog": [
+    "\n\nHello! Please state your problem.",
+    "Please say \"quit\" or \"goodbye\" when you are ready to conclude our session."
+  ],
+  "preprocess_rules": [
+    [
+      "!\"\\#\\$%\\&'\\(\\)\\*\\+,\\-\\./:;<=>\\?@\\[\\\\\\]\\^_`\\{\\|\\}\\~",
+      ""
+    ],
+    [
+      "\\bi'm\\b",
+      "i am"
+    ],
+    [
+      "\\b(can't)|(can not)\\b",
+      "cannot"
+    ],
+    [
+      "\\b(you're)|(youre)\\b",
+      "you are"
+    ],
+    [
+      "^((you )?see|well|um+)\\b",
+      ""
+    ],
+    [
+      "\\b(sort|kind)a\\b",
+      ""
+    ],
+    [
+      "\\b(sort|kind)\\s*of\\b",
+      ""
+    ]
+  ],
+  "transformations": [
+    [
+      "(.*\\b)(hi|hello|howdy|greetings|hola)(\\b.*)",
+      [
+        "Hi there. Please state 2PP problem."
+      ]
+    ],
+    [
+      "(.*\\b)(b[^a-h^j-z]tch|d[^b-z]mn|f[^a-t^v-z]ck|sh[^a-h^j-z]t|[^b-z]ss)(\\b.*)",
+      [
+        "That must be very upsetting for 2PNA.",
+        "I would appreciate it if 2PNA wouldn't swear.",
+        "I can see 2PP frustration."
+      ]
+    ],
+    [
+      "(.*\\b)(name)(\\b.*)",
+      [
+        "Great, good to know that.",
+        "I am not interested in names."
+      ]
+    ],
+    [
+      "(.*\\b)(sorry)(\\b.*)",
+      [
+        "Please don't apologize.",
+        "Apologies BE.PL not necessary.",
+        "What feelings do 2PNA have when 2PNA apologize?"
+      ]
+    ],
+    [
+      "(?P<subj>.*?)(\\bi remember\\b)(?P<pred>.*)",
+      [
+        "Do 2PNA often think of \\g<pred>?",
+        "Does thinking of \\g<pred> bring anything else to mind?",
+        "What else do 2PNA remember?",
+        "Why do 2PNA recall \\g<pred> right now?"
+      ]
+    ],
+    [
+      "(?P<subj>.*?)(\\bif\\b)(?P<pred>.*)",
+      [
+        "Do 2PNA really think it is likely that \\g<pred>?",
+        "Do 2PNA wish that \\g<pred>?",
+        "What do 2PNA think about \\g<pred>",
+        "Really--if \\g<pred>?"
+      ]
+    ],
+    [
+      "(?P<subj>.*\\b)(?P<dream>dream(ed)? about)(?P<pred>\\b.*)",
+      [
+        "How do 2PNA feel about \\g<pred> in reality?"
+      ]
+    ],
+    [
+      "(?P<subj>.*\\b)(?P<dream>dream(ed)?)(?P<pred>\\b.*)",
+      [
+        "Really -- \\g<pred>?",
+        "What does this dream suggest to 2PNA?",
+        "Do 2PNA dream often?",
+        "Have 2PNA dreamed \\g<pred> before?"
+      ]
+    ],
+    [
+      "(?P<subj>.*\\b)(my mother|mom|mama)(?P<pred>\\b.*)",
+      [
+        "Who else in 2PP family \\g<pred>?",
+        "Tell 1PA more about 2PP family."
+      ]
+    ],
+    [
+      "(?P<subj>.*\\b)(my father|dad|daddy|papa)(?P<pred>\\b.*)",
+      [
+        "Your father?",
+        "Does he influence 2PNA strongly?",
+        "Tell 1PA more about 2PP family."
+      ]
+    ],
+    [
+      "(?P<subj>.*\\b)(my)(?P<pred>\\b.*)",
+      [
+        "2PP \\g<pred>?"
+      ]
+    ],
+    [
+      "(?P<subj>.*\\b)(i want)(?P<pred>\\b.*)",
+      [
+        "What would it mean for 2PNA if 2PNA got \\g<pred>?",
+        "Why do 2PNA want \\g<pred>?",
+        "Suppose 2PNA got \\g<pred> soon. What then?"
+      ]
+    ],
+    [
+      "(?P<subj>.*\\b)(i need)(?P<pred>\\b.*)",
+      [
+        "What would it mean to 2PNA if 2PNA got \\g<pred>?"
+      ]
+    ],
+    [
+      "(?P<subj>.*\\b)(i think)(?P<pred>\\b.*)",
+      [
+        "What makes 2PNA think \\g<pred>?"
+      ]
+    ],
+    [
+      "(?P<subj>.*\\b)(i am glad)(?P<pred>\\b.*)",
+      [
+        "How have 1PN helped 2PNA to be \\g<pred>?",
+        "What makes 2PNA happy just now?",
+        "Can 1PN explain why 2PNA BE.PL suddenly happy \\g<pred>?"
+      ]
+    ],
+    [
+      "(?P<subj>.*\\b)(i am sad about)(?P<pred>\\b.*)",
+      [
+        "Why does \\g<pred> make 2PNA sad?"
+      ]
+    ],
+    [
+      "(?P<subj>.*\\b)(i am sad|depressed)(?P<pred>\\b.*)",
+      [
+        "1PN am sorry to hear 2PNA BE.PL depressed.",
+        "1PN am sure it's not pleasant to be sad.",
+        "Why does \\g<pred> make 2PNA sad?"
+      ]
+    ],
+    [
+      "(?P<subj>.*\\b)(are like)(?P<pred>\\b.*)",
+      [
+        "What resemblance do 2PNA see between \\g<subj> and \\g<pred>?"
+      ]
+    ],
+    [
+      "(?P<subj>.*\\b)(is like)(?P<pred>\\b.*)",
+      [
+        "In what way is it that \\g<subj> is like \\g<pred>?",
+        "What resemblance do 2PNA see?",
+        "Could there really be some connection?"
+      ]
+    ],
+    [
+      "(?P<subj>.*\\b)(alike)(?P<pred>\\b.*)",
+      [
+        "In what way?",
+        "What similarities BE.PL there?"
+      ]
+    ],
+    [
+      "(?P<subj>.*\\b)(same)(?P<pred>\\b.*)",
+      [
+        "What other connections do 2PNA see?"
+      ]
+    ],
+    [
+      "(?P<subj>.*\\b)(i was)(?P<pred>\\b.*)",
+      [
+        "Were 2PNA really?",
+        "Why do 2PNA tell me 2PNA were \\g<pred> now?"
+      ]
+    ],
+    [
+      "(?P<subj>.*\\b)(i am)(?P<pred>\\b.*)",
+      [
+        "In what way BE.PL 2PNA \\g<pred>?",
+        "Do 2PNA want to be \\g<pred>?"
+      ]
+    ],
+    [
+      "(?P<subj>.*\\b)(am i)(?P<pred>\\b.*)",
+      [
+        "Do 2PNA believe 2PNA BE.PL \\g<pred>?",
+        "Would 2PNA want to be \\g<pred>?",
+        "YDo you wish 1PN would tell 2PNA 2PNA BE.PL \\g<pred>?",
+        "What would it mean if 2PNA were \\g<pred>?"
+      ]
+    ],
+    [
+      "(?P<subj>.*\\b)(you are)(?P<pred>\\b.*)",
+      [
+        "What makes 2PNA think 1PN am \\g<pred>?"
+      ]
+    ],
+    [
+      "(?P<subj>.*\\b)(you)(?P<pred>\\b.*)(i|me.*)",
+      [
+        "Why do 2PNA think 1PN \\g<pred> 2PNA?"
+      ]
+    ],
+    [
+      "(?P<subj>.*\\b)(because)(?P<pred>\\b.*)",
+      [
+        "Is that the real reason?",
+        "What other reasons might there be",
+        "Does that reason seem to explain anything else?"
+      ]
+    ],
+    [
+      "(?P<subj>.*\\b)(were you)(?P<pred>\\b.*)",
+      [
+        "Perhaps 1PN was \\g<pred>",
+        "What do 2PNA think?",
+        "What if 1PN had been \\g<pred>?"
+      ]
+    ],
+    [
+      "(?P<subj>.*\\b)(i cannot)(?P<pred>\\b.*)",
+      [
+        "Maybe 2PNA could \\g<pred> now.",
+        "What if 2PNA could \\g<pred>"
+      ]
+    ],
+    [
+      "(?P<subj>.*\\b)(i feel)(?P<pred>\\b.*)",
+      [
+        "Do 2PNA often feel \\g<pred>?"
+      ]
+    ],
+    [
+      "(?P<subj>.*\\b)(i felt)(?P<pred>\\b.*)",
+      [
+        "What other feelings do 2PNA have?"
+      ]
+    ],
+    [
+      "(?P<subj>.*\\b)(why don't you)(?P<pred>\\b.*)",
+      [
+        "Should 2PNA \\g<pred> 2PR?",
+        "Do 2PR believe 1PN don't \\g<pred>?",
+        "Perhaps 1PN will \\g<pred> in good time."
+      ]
+    ],
+    [
+      "(?P<subj>.*\\b)(ye([sp]|ah))(?P<pred>\\b.*)",
+      [
+        "You seem quite positive.",
+        "Are 2PNA sure?",
+        "1PN see."
+      ]
+    ],
+    [
+      "(?P<subj>.*\\b)(?P<neg>no(pe)?)(?P<pred>\\b.*)",
+      [
+        "You BE.PL being a bit negative, aren't 2PNA?",
+        "Are 2PNA saying \"\\g<neg>\" just to be negative?"
+      ]
+    ],
+    [
+      "(?P<subj>.*\\b)(someone|somebody)(?P<pred>\\b.*)",
+      [
+        "Can 2PNA be more specific?"
+      ]
+    ],
+    [
+      "(?P<subj>.*\\b)(everyone|everybody)(?P<pred>\\b.*)",
+      [
+        "Can 2PNA think of anyone in particular?",
+        "Who, for example?"
+      ]
+    ],
+    [
+      "(?P<subj>.*\\b)(always)(?P<pred>\\b.*)",
+      [
+        "Can 2PNA think of a specific example?",
+        "What incident BE.PL 2PNA thinking of?",
+        "Really? Always?"
+      ]
+    ],
+    [
+      "(?P<subj>.*\\b)(maybe|perhaps)(?P<pred>\\b.*)",
+      [
+        "You do not seem quite certain."
+      ]
+    ],
+    [
+      "(?P<subj>.*\\b)(are)(?P<pred>\\b.*)",
+      [
+        "Did 2PNA think they might not be \\g<pred>?",
+        "Possibly they are \\g<pred>"
+      ]
+    ],
+    [
+      "^knock\\s+knock.*$",
+      [
+        "Who's there?"
+      ]
+    ],
+    [
+      "EMPTY|.+",
+      [
+        "Very intersting.",
+        "I am not sure I understand 2PNA fully.",
+        "Please contine.",
+        "Do 2PNA feel strongly about discussing such things?"
+      ]
+    ]
+  ],
+  "postprocess_rules": [
+    [
+      "BE.PL",
+      "are"
+    ],
+    [
+      "you are",
+      "I am"
+    ],
+    [
+      "\\byou\\b",
+      "I"
+    ],
+    [
+      "\\bi\\b",
+      "you"
+    ],
+    [
+      "\\bme\\b",
+      "you"
+    ],
+    [
+      "\\bmy\\b",
+      "2PP"
+    ],
+    [
+      "\\byour\\b",
+      "my"
+    ],
+    [
+      "\\b2PP\\b",
+      "your"
+    ],
+    [
+      "\\byourself\\b",
+      "1PR"
+    ],
+    [
+      "\\bmyself\\b",
+      "yourself"
+    ],
+    [
+      "\\b2PR\\b",
+      "yourself"
+    ],
+    [
+      "\\b1PR\\b",
+      "myself"
+    ],
+    [
+      "\\b1PA\\b",
+      "me"
+    ],
+    [
+      "\\b1PN\\b",
+      "I"
+    ],
+    [
+      "\\b2PNA\\b",
+      "you"
+    ],
+    [
+      "\\bi\\b",
+      "I"
+    ]
+  ],
+  "epilog": [
+    "Goodbye! I hope our session was enlightening."
+  ]
+}
