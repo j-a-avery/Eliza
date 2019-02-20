@@ -33,31 +33,59 @@ To be a valid bot definition, `BOTNAME.json` must contain a JSON object/Python d
 A sample Eliza session is as follows. (The user's intereactions are in *italics*, and Eliza's are `formatted as code`.)
 
 *Men are all alike.*
+
 `What similarities are there?`
+
 *They're always bugging us about something or other.*
+
 `What incident are you thinking of?`
+
 *Well, my boyfriend made me come here.*
+
 `Your boyfriend made you come here?`
+
 *He says I am depressed much of the time.*
+
 `I am sure it's not pleasant to be sad.`
+
 *It's true, I am unhappy.*
+
 `Do you want to be unhappy?`
+
 *I need some help; that much seems certain.*
+
 `What would it mean to you if you got some help?`
+
 *Perhaps I could learn to get along with my mother.*
+
 `Who else in your family ?`
+
 *My mother takes care of me.*
+
 `Who else in your family takes care of you?`
-*y father.*
+
+*My father.*
+
 `Your father?`
+
 *You are like my father in some ways.*
+
 `Does he influence you strongly?`
+
 *You are not very aggressive, but I think you don't want me to notice that.*
+
 `What makes you think I am not very aggressive, ?`
+
 *You don't argue with me.*
+
 `Why do you think I don't argue with you?`
+
 *You are afraid of me.*
+
 `What makes you think I am afraid of you?`
+
 *My father is afraid of everybody.*
+
 `Your father?`
+
 *quit*
