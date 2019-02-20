@@ -28,6 +28,8 @@ To be a valid bot definition, `BOTNAME.json` must contain a JSON object/Python d
 * **postprocess_rules**: Like the preprocess rules, but run after preprocess rules and transformations.
 * **epilog**: A list of strings to be printed after the conclusion of the conversation, before the transcript is saved.
 
+A sample dialog can be generated with `cat eliza.test-script.txt | ./eliza.py bot=eliza`.
+
 ## Sample Session
 
 A sample Eliza session is as follows. (The user's intereactions are in *italics*, and Eliza's are `formatted as code`.)
